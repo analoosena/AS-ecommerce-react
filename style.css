@@ -1,0 +1,199 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+body{
+    background: linear-gradient(90deg, rgba(236,167,205,0.5462759584664536) 29%, rgba(255,101,55,0.4664037539936102) 68%);
+}
+
+main{
+    max-width: 1024px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+header{
+    background-color: #eca7cd;
+    padding: 12px 0;
+    font-family: 'Atma', 'sans-serif';
+    display:flex;
+    align-items: center;
+    justify-content: space-around;
+}
+header ul{
+    display: flex;
+    font-size: 1.2em;
+}
+header li{
+    list-style-type: none;
+    padding-right: 12px;
+    text-decoration: none;
+}
+header a{
+    text-decoration: none;
+}
+
+header h1{
+    font-family: 'bungee';
+    font-weight: 100;
+}
+
+#products img{
+    width: 230px;
+    
+}
+
+#sobre-a-loja{
+    padding-top: 50px;
+    display: flex;
+    
+}
+#sobre-a-loja div h3, #products h3{
+    text-align: center;
+    font-size: 1.5em;
+    font-family: 'bungee';
+    font-weight: 100;
+    border-bottom: 2px solid #000;
+    font-weight: 100;
+}
+#sobre-a-loja div p{
+    padding-top: 50px;
+    text-align: justify;
+    font-size: 1em;
+    padding-left: 20px;
+}
+
+#products{
+    padding: 50px 0;
+    
+}
+.vitrine{
+    padding-top: 40px;
+    display: flex;
+    justify-content: center;
+    gap:3%;
+}
+.vitrine p{
+    text-align: justify;
+    font-size: 12px;
+    padding-bottom: 8px;
+}
+.vitrine div{
+    width: 22.75%;
+    height: 360px;
+    position: relative;
+}
+.vitrine h4{
+    font-size: 16px;
+    text-align: justify;
+    padding-bottom: 8px;
+}
+.vitrine button{
+    background-color: #eca7cd;
+    color: black;
+    font-weight: 600;
+    outline:none;
+    border-radius: 5px;
+    padding: 2px;
+    border: 1px solid palevioletred;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    cursor: pointer;
+}
+
+@media screen and (min-width:641px) and (max-width:1023px){
+
+    #sobre-a-loja{
+        padding-top: 50px;
+        display: block;
+        
+    }
+    #sobre-a-loja img{
+        width: 100%; 
+        padding: 0 12px;
+    }
+    #sobre-a-loja div p{
+        padding-top: 50px;
+        text-align: justify;
+        font-size: 1.5em;
+        padding-left: 20px;
+    }
+    .vitrine{
+        padding: 40px 20px;
+        display: grid;
+        grid-template-columns: 48% 48%;
+        width: 95%;
+        place-items: center;
+    }
+    .vitrine div{
+        width: 100%;
+        height: 430px;
+        position: relative;
+
+    }
+    #products img{
+        width: 80%;
+        padding-left: 50px;
+
+    }
+    .vitrine p{
+        text-align: justify;
+        font-size: 1.2em;
+        padding-bottom: 8px;
+    }
+    .vitrine h4{
+        font-size: 1.5em;
+        text-align: center;
+    }
+}
+
+@media screen and (max-width:640px){
+    #sobre-a-loja{
+        padding-top: 50px;
+        display: block;
+        
+    }
+    header ul{
+        display: block;
+        font-size: 1.2em;
+    }
+    #sobre-a-loja div p{
+        
+        text-align: justify;
+        font-size: 1em;
+        padding: 0 12px;
+        padding-top: 20px;
+    }
+    #sobre-a-loja img{
+        width: 100%; 
+        padding: 0 12px;
+    }
+    .vitrine{
+        padding-top: 40px;
+        display: block;
+    }
+    .vitrine div{
+        width: 100%;
+        height: 450px;
+        position: relative;
+        
+    }
+    .vitrine p{
+        text-align: justify;
+        font-size: 1em;
+        padding-bottom: 8px;
+    }
+    .vitrine h4{
+        text-align: center;
+        font-size: 1em;
+    }
+    #products img{
+        width: 80%;
+        padding-left: 50px;
+        padding-top: 30px;
+    }
+}
