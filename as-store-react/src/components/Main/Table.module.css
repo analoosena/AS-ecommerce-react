@@ -1,0 +1,21 @@
+.table{
+    width: 100%;
+    padding-bottom: 8px;
+}
+tr{
+    display: flex;
+    justify-content: space-between;
+}
+.floatingTable{
+    position: fixed;
+    top: 72px;
+    background-color: rgba(236, 167, 205, 0.6);
+    border-radius: 5px;
+    right: 20px;
+    width: 320px;
+    padding: 12px;
+}
+.line{
+    padding-top: 12px;
+    border-top: 1px rgb(87, 53, 58) solid;
+}

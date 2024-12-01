@@ -16,7 +16,7 @@
 }
 .headerItem{
     list-style-type: none;
-    padding-right: 12px;
+    padding-right: 20px;
     text-decoration: none;
 }
 .links{
@@ -26,6 +26,14 @@
 .title{
     font-family: 'bungee';
     font-weight: 100;
+}
+.imagem{
+    width: 30px;
+}
+.button{
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
 }
 @media screen and (max-width:640px){
     .item{

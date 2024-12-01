@@ -7,6 +7,10 @@
     width: 100%;
     margin: 0 auto;
 }
+.bodyFrames{
+    display: flex;
+    gap: 80px;
+}
 .links{
     text-decoration: none;
     color: black;
@@ -15,7 +19,6 @@
 .sobreALoja{
     padding-top: 50px;
     display: flex;
-    
 }
 .titleh3{
     text-align: center;
