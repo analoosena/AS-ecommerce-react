@@ -1,0 +1,196 @@
+
+.image{
+    width: 200px;;
+}
+.bodyMain{
+    max-width: 1024px;
+    width: 100%;
+    margin: 0 auto;
+}
+.links{
+    text-decoration: none;
+    color: black;
+}
+
+.sobreALoja{
+    padding-top: 50px;
+    display: flex;
+    
+}
+.titleh3{
+    text-align: center;
+    font-size: 1.5em;
+    font-family: 'bungee';
+    font-weight: 100;
+    border-bottom: 2px solid #000;
+    font-weight: 100;
+}
+.textSobre{
+    padding-top: 50px;
+    text-align: justify;
+    font-size: 1em;
+    padding-left: 20px;
+}
+
+.products{
+    padding: 50px 0;
+}
+.price{
+    color: darkmagenta;
+}
+.vitrine{
+    padding-top: 40px;
+    display: flex;
+    justify-content: space-between; /* Espaçamento uniforme */
+    align-items: flex-start; /* Alinha os itens no topo */
+    gap: 16px; /* Espaçamento entre as divs */
+    flex-wrap: wrap; /* Permite que os itens quebrem a linha */
+}
+.text{
+    text-align: justify;
+    font-size: 12px;
+    padding-bottom: 8px;
+}
+.vitrineSection{
+
+    width: 23%; /* Largura consistente para cada produto */
+    box-sizing: border-box; /* Inclui padding e border no tamanho */
+    text-align: center; /* Centraliza o texto */
+}
+.textTitle{
+    font-size: 16px;
+    text-align: justify;
+    padding-bottom: 8px;
+}
+.button{
+
+    background-color: #f48fb1; /* Cor de fundo (rosa claro) */
+    border: none; /* Remove a borda */
+    color: #fff; /* Cor do texto */
+    padding: 10px 20px; /* Espaçamento interno */
+    font-size: 16px; /* Tamanho do texto */
+    font-weight: bold; /* Texto em negrito */
+    border-radius: 8px; /* Bordas arredondadas */
+    cursor: pointer; /* Cursor de ponteiro ao passar o mouse */
+    margin-top: 10px; /* Espaço acima do botão */
+}
+
+@media screen and (min-width:641px) and (max-width:1023px){
+
+    .sobreALoja{
+        padding-top: 50px;
+        display: block;
+        
+    }
+    .imageLoja{
+        width: 100%; 
+        padding: 0 12px;
+    }
+    .textSobre{
+        padding-top: 50px;
+        text-align: justify;
+        font-size: 1.5em;
+        padding-left: 20px;
+    }
+    .vitrine{
+        padding: 40px 20px;
+        display: grid;
+        grid-template-columns: repeat(2, 1 fr);
+        gap: 20px;
+        width: 95%;
+        place-items: center;
+    }
+    .vitrineSection{
+        width: 100%;
+        padding: 20px;
+        height: auto; /* Remove altura fixa para se ajustar ao conteúdo */
+        position: relative;
+        display: flex;
+        flex-direction: column; /* Coloca os elementos em coluna (imagem em cima, texto embaixo) */
+        align-items: center;
+
+    }
+    .image{
+        width: 80%;
+        padding-left: 50px;
+        margin-bottom: 10px; /* Espaçamento entre a imagem e o texto */
+
+    }
+    .text{
+        text-align: justify;
+        font-size: 1.2em;
+        padding-bottom: 8px;
+    }
+    .textTitle{
+        font-size: 1.5em;
+        text-align: center;
+    }
+    .button{
+        margin-top: 10px;
+        padding: 12px 20px;
+        width: 100%;
+        max-width: 200px; /* Botões com largura máxima */
+        text-align: center;
+        background-color: pink; /* Cor de fundo dos botões */
+        border: none;
+        cursor: pointer;
+        border-radius: 5px;
+    }
+    .button:hover{
+        background-color: #ff8da1; 
+    }
+}
+
+@media screen and (max-width:640px){
+    .sobreALoja{
+        padding-top: 50px;
+        display: block;
+        
+    }
+    .textSobre{
+        text-align: justify;
+        font-size: 1em;
+        padding: 0 12px;
+        padding-top: 20px;
+    }
+    .sobreALoja img{
+        width: 100%; 
+        padding: 0 12px;
+        margin-bottom: 10px; /* Garantir espaço abaixo da imagem */
+    }
+    .vitrine{
+        padding-top: 40px;
+        display: block;
+    }
+    .vitrineSection{
+        width: 100%;
+        height: auto; /* Remover altura fixa para adaptar ao conteúdo */
+        position: relative;
+        display: flex;
+        flex-direction: column; /* Organiza as imagens e botões em coluna */
+        align-items: center;
+        margin-bottom: 20px; /* Espaço entre os produtos */
+        
+    }
+    .text{
+        text-align: justify;
+        font-size: 1em;
+        padding-bottom: 8px;
+    }
+    .textTitle{
+        text-align: center;
+        font-size: 1em;
+    }
+    .image{
+        width: 80%;
+        padding-left: 50px;
+        padding-top: 30px;
+        margin-bottom: 10px; /* Espaço abaixo das imagens */
+    }
+    .button{
+        margin-top: 10px;
+        width: 100%; /* Tornar o botão responsivo */
+        max-width: 200px; /* Definir largura máxima para botões maiores */
+        text-align: center;
+    }
+}
