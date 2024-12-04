@@ -66,10 +66,9 @@
     padding-bottom: 8px;
 }
 .button{
-
-    background-color: #f48fb1; /* Cor de fundo (rosa claro) */
-    border: none; /* Remove a borda */
-    color: #fff; /* Cor do texto */
+    background-color: #f48fb1; 
+    border: none; 
+    color: #fff;
     padding: 10px 20px; /* Espaçamento interno */
     font-size: 16px; /* Tamanho do texto */
     font-weight: bold; /* Texto em negrito */

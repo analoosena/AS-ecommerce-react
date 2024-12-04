@@ -43,12 +43,41 @@ const Principal = () => {
         }
         setEVisivel(true);
     }
+    const removeToCart = (product) => {
+        const itemIgual= cart.find((item) => item.id === product.id)
+        if(itemIgual){
+            setCart(cart.map(item =>
+                item.id === product.id ? {...item, quantidade: item.quantidade - 1} : item
+            ))
+        }else{
+            setCart([...cart,{...product, quantidade: 0}])
+        }
+    }
+
+    const [produtosOrdenados, setProdutosOrdenados] = useState([...product]);
+    const [ordem, setOrdem] = useState('');
+
+    function ordenarProdutos (criterio) {
+        if( criterio === 'selecione'){
+            setProdutosOrdenados([...product]);
+        }else{
+            const ordenados = [...produtosOrdenados].sort((a,b) => {
+                    if (criterio === 'crescente'){
+                    return a.newprice -b.newprice;
+                }else{
+                    return b.newprice - a.newprice;
+                }
+            });
+            setProdutosOrdenados(ordenados);
+            setOrdem(criterio);
+        }
+    }
+
 
 
     return(
         <>
         <Header visibilidadeCart= {visibilidadeCart}/>
-
         <main className={styles.bodyMain}>
             <div className={styles.bodyFrames}>
                 <div>
@@ -64,26 +93,44 @@ const Principal = () => {
 
                     <section id="products" className={styles.products}>
                         <h3 className={styles.titleh3}>Produtos</h3>
+                        <div>
+                        <div className={styles2.abaFilter}>
+                            <div>
+                                <h3>Filtre por:</h3>
+                                <input type="number" placeholder="Valor Mínimo" />
+                                <input type="number" placeholder="Valor Máximo" />
+                                <input type="text" placeholder="Por nome" />
+                            </div>
+                            <div>
+                                <h3>Oderne pelo valor:</h3>
+                                <select className={styles2.abaSelection} value={ordem} id="ordem" onChange={(e) => ordenarProdutos(e.target.value)}>
+                                    <option className={styles2.abaOption} value="selecione"> Selecione </option>
+                                    <option  value="crescente">Crescente</option>
+                                    <option  value="descrescente">Decrescente</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        </div>
                         <div className={styles.vitrine}>
-
-                            {product.map(item => {
+                            {produtosOrdenados.map((item) =>{
                                 return(
+                                <div key={item.id} className={styles.vitrineSection}>
+                                <a className={styles.links} href="#carrinho" >
+                                <img className={styles.image} src={item.image} alt="T-shirt"/>
+                                <h4 className={styles.textTitle}>{item.name}</h4>
+                                <p className={styles.text}>{item.description}</p>
+                                <div className={styles.price}>
+                                    <del>R${item.oldprice}</del>
+                                    <strong>  R$ {item.newprice}</strong>
+                                </div>
+                                <button className={styles.button} onClick={() => {addToCart(item)}}  type="button">Adicionar ao carrinho</button>
+                            </a>
+                            </div>
 
-                                    <div key={item.id} className={styles.vitrineSection}>
-                                        <a className={styles.links} href="#carrinho" >
-                                        <img className={styles.image} src={item.image} alt="T-shirt"/>
-                                        <h4 className={styles.textTitle}>{item.name}</h4>
-                                        <p className={styles.text}>{item.description}</p>
-                                        <div className={styles.price}>
-                                            <del>R${item.oldprice}</del>
-                                            <strong>  R$ {item.newprice}</strong>
-                                        </div>
-                                        <button className={styles.button} onClick={() => {addToCart(item)}}  type="button">Adicionar ao carrinho</button>
-                                    </a>
-                                    </div>
                                 )
-                            })}
-
+                            })
+                            }
                         </div>
                         
                     </section>
@@ -96,6 +143,8 @@ const Principal = () => {
                             <td style={{fontWeight: 'bold'}}>Quant.</td>
                             <td style={{fontWeight: 'bold'}}>Produto</td>
                             <td style={{fontWeight: 'bold'}}>Preço</td>
+                            <td> </td>
+                            <td></td>
                         </tr>
                     </table>
                     {cart.length === 0? (
@@ -105,15 +154,21 @@ const Principal = () => {
                             
                             {cart.map((item, index) =>{
                                 return(
-                                <table className={styles2.table}>
-                                    <li key= {index}>
-                                        <tr className={styles2.tr}>
-                                            <td>{item.quantidade}</td>
-                                            <td >{item.name}</td>
-                                            <td >R${item.newprice}</td>
-                                        </tr>
-                                    </li>
-                                </table>
+                                    item.quantidade > 0 &&(
+                                    <table className={styles2.table}>
+                                        <li key= {index}>
+                                            <tr className={styles2.tr}>
+                                                <td>{item.quantidade}</td>
+                                                <td >{item.name}</td>
+                                                <td >R${item.newprice}</td>
+                                                <div>
+                                                    <button className={styles2.button} type="button" onClick={() => {addToCart(item)}}> + </button>
+                                                    <button style={{marginLeft: '3px'}} className={styles2.button} type="button" onClick={() => {removeToCart(item)}}> - </button>
+                                                </div>
+                                            </tr>
+                                        </li>
+                                    </table>
+                                    )
                                 )
                             })}
                         </ul>

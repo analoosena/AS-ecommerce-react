@@ -5,6 +5,7 @@
 tr{
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 .floatingTable{
     position: fixed;
@@ -18,4 +19,40 @@ tr{
 .line{
     padding-top: 12px;
     border-top: 1px rgb(87, 53, 58) solid;
+}
+.button{
+    padding: 3px;
+    background-color: #f48fb1; 
+    border: none; 
+    color: #fff;
+    font-size: 16px; 
+    font-weight: bold; 
+    border-radius: 8px; 
+    cursor: pointer;
+    
+}
+
+.abaFilter{
+    background-color: #fff;
+    display: flex;
+    padding: 20px 10px;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    gap: 50px;
+}
+.abaSelection{
+    padding: 3px;
+    background-color: rgba(236, 167, 205, 0.6);
+    border: none; 
+    color: #fff;
+    font-size: 16px; 
+    border-radius: 8px; 
+    cursor: pointer;
+}
+.abaOption{
+    height: 30px;
+    border: 1px solid #cbcbcb;
+    padding-left: 17px;
+    padding-top: 12px;
 }
