@@ -29,21 +29,26 @@ tr{
     font-weight: bold; 
     border-radius: 8px; 
     cursor: pointer;
-    
 }
 
 .abaFilter{
-    background-color: #fff;
+    background-color: #eca7cd;
     display: flex;
     padding: 20px 10px;
     align-items: center;
     justify-content: center;
     width: 100%;
     gap: 50px;
+    
+}
+.abaSticky{
+    position: sticky;
+    top: 20px;
+    z-index: 1;
 }
 .abaSelection{
     padding: 3px;
-    background-color: rgba(236, 167, 205, 0.6);
+    background-color: rgba(167, 23, 102, 0.4);
     border: none; 
     color: #fff;
     font-size: 16px; 
@@ -55,4 +60,17 @@ tr{
     border: 1px solid #cbcbcb;
     padding-left: 17px;
     padding-top: 12px;
+}
+.abaFiltros{
+    display: flex;
+    gap: 10px;
+}
+.abaInput{
+    padding: 3px;
+    background-color: #c3c0c2;  
+    border: none; 
+    color: #fff;
+    font-size: 14px; 
+    border-radius: 8px; 
+    cursor: text;
 }
