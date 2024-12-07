@@ -61,6 +61,10 @@ tr{
     padding-left: 17px;
     padding-top: 12px;
 }
+.abaOption:hover{
+    background-color: aqua;
+    color: antiquewhite;
+}
 .abaFiltros{
     display: flex;
     gap: 10px;
